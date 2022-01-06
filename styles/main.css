@@ -187,6 +187,7 @@ button {
   -o-background-size: contain;
   -moz-background-size: contain;
   -webkit-background-size: contain;
+  background-repeat: no-repeat;
   width: 20px;
   height: 20px;
   cursor: pointer;
