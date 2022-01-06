@@ -1,0 +1,222 @@
+:root {
+  --text-font: 'IBM Plex Mono', monospace;
+  --accent-font: 'Playfair Display', serif;
+  --accent-color: #e8604c;
+  --transition-duration: 0s;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0a1a2b;
+  --text-color: #faf3f2;
+  --switch-image: url("../img/sun.svg");
+}
+
+[data-theme="light"] {
+  --bg-color: #faf3f2;
+  --text-color: #0a1a2b;
+  --switch-image: url("../img/moon.svg");
+}
+
+body {
+	font-family: var(--text-font);
+	color: var(--text-color);
+	margin: 8px;
+	background-color: var(--bg-color);
+	border: 3px solid var(--accent-color);
+	transition-property: background-color;
+	transition-timing-function: ease-in;
+	transition-duration: var(--transition-duration);
+}
+
+.root {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: calc(100vh - 23px);
+	max-height: 100vh;
+	overflow-y: scroll;
+	padding: 36px;
+}
+
+@media(max-width: 430px) {
+	.root {
+		padding: 12px;
+	}
+}
+
+.title {
+	position: relative;
+	align-self: center;
+	text-align: center;
+}
+
+h1 {
+	font-family: var(--accent-font);
+	color: var(--text-color);
+	font-size: 95px;
+	font-weight: 400;
+	z-index: 1;
+	transition-property: color;
+	transition-timing-function: ease-in;
+	transition-duration: var(--transition-duration);
+}
+
+@media(max-width: 600px) {
+	h1 {
+		font-size: 60px;
+	}
+}
+
+h1 > em {
+	font-style: initial;
+  -webkit-text-stroke: 1px currentColor;
+  text-stroke: 1px currentColor;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+h2 {
+	font-family: var(--text-font);
+	color: var(--text-color);
+	font-size: 16px;
+	font-weight: 100;
+	transition-property: color;
+	transition-timing-function: ease-in;
+	transition-duration: var(--transition-duration);
+}
+
+svg { 
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: -25%;
+	left: -60px;
+	z-index: -1;
+}
+
+svg textPath { 
+  font-size: 36px;
+	font-family: var(--text-font);
+	text-transform: uppercase;
+	letter-spacing: 23px;
+	fill: var(--accent-color);
+}
+
+@media(max-width: 830px) {
+	svg {
+		display: none;
+	}
+}
+
+p {
+	font-family: var(--text-font);
+	color: var(--text-color);
+	font-size: 14px;
+	transition-property: color;
+	transition-timing-function: ease-in;
+	transition-duration: var(--transition-duration);
+}
+
+a {
+	font-family: var(--text-font);
+	font-size: 14px;
+	color: var(--accent-color);
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+}
+
+a:after {
+	content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover:after {
+	outline: none;
+	border: none;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+a:focus:after {
+	outline: none;
+	border: none;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+a:focus-visible:after {
+	outline: none;
+	border: none;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+nav {
+	display: grid;
+	grid-template-columns: max-content max-content max-content;
+	grid-column-gap: 18px;
+	justify-content: flex-end;
+}
+
+header a {
+	text-transform: uppercase;
+}
+
+footer {
+	align-self: flex-start;
+}
+
+.about {
+	text-align: justify;
+}
+
+button {
+	border: none;
+  background: var(--switch-image);
+  background-color: transparent;
+  background-size: contain;
+  -o-background-size: contain;
+  -moz-background-size: contain;
+  -webkit-background-size: contain;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+button:before {
+	content: '';
+	width: 36px;
+	height: 36px;
+	background-color: var(--accent-color);
+	opacity: 0.2;
+	position: absolute;
+	top: -8px;
+	left: -8px;
+	border-radius: 50%;
+	transform: scale(0);
+	transition: transform .2s linear;
+}
+
+button:hover:before {
+	transform: scale(1);
+}
+
+button:focus:before {
+	outline: 0;
+	transform: scale(1);
+}
+
+button:focus-visible:before {
+	outline: 0;
+	transform: scale(1);
+}
