@@ -183,10 +183,10 @@ button {
 	border: none;
   background: var(--switch-image);
   background-color: transparent;
-  background-size: contain;
-  -o-background-size: contain;
-  -moz-background-size: contain;
-  -webkit-background-size: contain;
+  background-size: 20px 20px;
+  -o-background-size: 20px 20px;
+  -moz-background-size: 20px 20px;
+  -webkit-background-size: 20px 20px;
   background-repeat: no-repeat;
   width: 20px;
   height: 20px;
